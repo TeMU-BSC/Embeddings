@@ -9,6 +9,17 @@ In recent years word embedding/distributional semantic models evolved to become 
 However, building and consuming specific word embedding models require
 the setting of a large set of configurations, such as corpus-dependant parameters, distance measures as well as compositional models.
 
+## Corpora used
+
+* Scielo Full-Text in Spanish: We retrieved all the full-text available in Scielo.org (until December/2018) and processed them into sentences. Scielo.org node contains all Spanish articles, thus includes Latin and European Spanish.
+  * Sentences: ?
+  * Tokens: ?
+* Wikipedia Health: We retrieved all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology. Data were retrieved during December/2018.
+  * Sentences: ?
+  * Tokens: ?
+* Scielo + Wikipedia Health: We concatenated the previous two corpora.
+
+
 ## Preprocessing Step
 
 1) Removing not Spanish sentences by [Lingua] (https://github.com/pemistahl/lingua) library.
@@ -28,20 +39,6 @@ By Indra:
 	3) Setting a minimum acceptable token size to 1.
 	4) Setting a maximum acceptable token size to 100.
 	5) Applying lowercase the tokens (we generated both Cased and Uncased version).
-
-
-## Corpora used
-
-* Scielo Full-Text in Spanish: We retrieved all the full-text available in Scielo.org (until December/2018) and processed them into sentences. Scielo.org node contains all Spanish articles, thus includes Latin and European Spanish.
-  * Sentences: ?
-  * Tokens: ?
-* Wikipedia Health: We retrieved all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology. Data were retrieved during December/2018.
-  * Sentences: ?
-  * Tokens: ?
-* Scielo + Wikipedia Health: We concatenated the previous two corpora.
-
-## Pre-Processing
-
 
 ## Embeddings generated
 
