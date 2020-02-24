@@ -11,29 +11,29 @@ the setting of a large set of configurations, such as corpus-dependant parameter
 
 ## Corpora used
 
-* Scielo Full-Text in Spanish: We retrieved all the full-text available in Scielo.org (until December/2018) and processed them into sentences. Scielo.org node contains all Spanish articles, thus includes Latin and European Spanish.
+* **Scielo Full-Text in Spanish**: We retrieved all the full-text available in Scielo.org (until December/2018) and processed them into sentences. Scielo.org node contains all Spanish articles, thus includes Latin and European Spanish.
   * Sentences: ?
   * Tokens: ?
-* Wikipedia Health: We retrieved all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology. Data were retrieved during December/2018.
+* **Wikipedia Health**: We retrieved all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology. Data were retrieved during December/2018.
   * Sentences: ?
   * Tokens: ?
-* Scielo + Wikipedia Health: We concatenated the previous two corpora.
+* **Scielo + Wikipedia Health**: We concatenated the previous two corpora.
 
 
 ## Preprocessing Step
 
 1) Removing not Spanish sentences by [Lingua] (https://github.com/pemistahl/lingua) library.
-But because it does not work with high accuracy for Spanish langugae, we used a reversed way by removing English, German, French, Dutch and Danish sentences from our retrieved Spanish corpora.
+	- Because it does not work with a high accuracy for Spanish language, we used a reversed way by removing English, German, French, Dutch and Danish sentences from our retrieved Spanish corpora.
 
 2) Sentence spliting and tokenizing by [Freeling](http://nlp.lsi.upc.edu/freeling/) toolkit.
-    **FREELING** (Padro and Stanilovsky, 2012) is a C++ library providing language analysis functionalities  (Morphological Analysis, Named Entity Detection, PoS-Tagging, Parsing, Word Sense Disambiguation, Semantic Role Labelling, so forth) for a variety of languages.
+   - **Freeling** (Padro and Stanilovsky, 2012) is a C++ library providing language analysis functionalities  (Morphological Analysis, Named Entity Detection, PoS-Tagging, Parsing, Word Sense Disambiguation, Semantic Role Labelling, so forth) for a variety of languages.
 
 3) Final pre-processing by [Indra-Indexer](https://github.com/Lambda-3/Indraindexer) toolkit. 
-    1) Seperating punctuations from tokens.
-    2) Replaceing numbers for the place holder -> "<NUMBER>".
-    3) Setting a minimum acceptable token size to 1.
-    4) Setting a maximum acceptable token size to 100.
-    5) Applying lowercase the tokens (we generated both Cased and Uncased version).
+   - Separating punctuations from tokens.
+   - Replacing numbers for the place holder `<NUMBER>`.
+   - Setting a minimum acceptable token size to 1.
+   - Setting a maximum acceptable token size to 100.
+   - Applying lowercase the tokens (we generated both Cased and Uncased version).
 
 ## Embeddings generated
 
@@ -41,26 +41,20 @@ But because it does not work with high accuracy for Spanish langugae, we used a 
 
 We used the fastText (https://fasttext.cc/) to train word embeddings.
 We kept all standard options for training.
-
-• Minimum number of word occurrences: 5
-• Phrase representation: No (i.e. length of word n-gram = 1)
-• Minimum length of character n-gram: 3
-• Maximum length of character n-gram: 6
-• Size of word vectors: 300
-• Epochs: 20
-• Size of the context window: 5
-• Word-Representation Modes: CBOW and SKIPGRAM
-
-The following corpora were used: Scielo, Wikipedia and Scielo + Wikipedia
+- Minimum number of word occurrences: 5
+- Phrase representation: No (i.e. length of word n-gram = 1)
+- Minimum length of character n-gram: 3
+- Maximum length of character n-gram: 6
+- Size of word vectors: 300
+- Epochs: 20
+- Size of the context window: 5
+- Word-Representation Modes: CBOW and SKIPGRAM
 
 We generated word embedding for both version (Cased and Uncased corpora):
-
 - Scielo_cased
 - Scielo_uncased
-
 - Scielo+Wiki_cased
 - Scielo+Wiki_uncased
-
 - Wiki_cased
 - Wiki_uncased
 
@@ -71,11 +65,7 @@ We generated word embedding for both version (Cased and Uncased corpora):
 ## Directory Structure
 
 
-
-
 ## Digital Object Identifier (DOI) and access to dataset files
-
-=======
 
 
 ## Contact
