@@ -26,19 +26,14 @@ the setting of a large set of configurations, such as corpus-dependant parameter
 But because it does not work with high accuracy for Spanish langugae, we used a reversed way by removing English, German, French, Dutch and Danish sentences from our retrieved Spanish corpora.
 
 2) Sentence spliting and tokenizing by [Freeling](http://nlp.lsi.upc.edu/freeling/) toolkit.
-
-**FREELING** (Padro and Stanilovsky, 2012) is a C++ library providing language analysis functionalities 
-(Morphological Analysis, Named Entity Detection, PoS-Tagging, Parsing, Word Sense Disambiguation, 
-Semantic Role Labelling, so forth) for a variety of languages.
+    **FREELING** (Padro and Stanilovsky, 2012) is a C++ library providing language analysis functionalities  (Morphological Analysis, Named Entity Detection, PoS-Tagging, Parsing, Word Sense Disambiguation, Semantic Role Labelling, so forth) for a variety of languages.
 
 3) Final pre-processing by [Indra-Indexer](https://github.com/Lambda-3/Indraindexer) toolkit. 
-
-By Indra:
-	1) Seperating punctuations from tokens.
-	2) Replaceing numbers for the place holder -> <NUMBER>.
-	3) Setting a minimum acceptable token size to 1.
-	4) Setting a maximum acceptable token size to 100.
-	5) Applying lowercase the tokens (we generated both Cased and Uncased version).
+    1) Seperating punctuations from tokens.
+    2) Replaceing numbers for the place holder -> <NUMBER>.
+    3) Setting a minimum acceptable token size to 1.
+    4) Setting a maximum acceptable token size to 100.
+    5) Applying lowercase the tokens (we generated both Cased and Uncased version).
 
 ## Embeddings generated
 
