@@ -30,7 +30,7 @@ But because it does not work with high accuracy for Spanish langugae, we used a 
 
 3) Final pre-processing by [Indra-Indexer](https://github.com/Lambda-3/Indraindexer) toolkit. 
     1) Seperating punctuations from tokens.
-    2) Replaceing numbers for the place holder -> <NUMBER>.
+    2) Replaceing numbers for the place holder -> "<NUMBER>".
     3) Setting a minimum acceptable token size to 1.
     4) Setting a maximum acceptable token size to 100.
     5) Applying lowercase the tokens (we generated both Cased and Uncased version).
