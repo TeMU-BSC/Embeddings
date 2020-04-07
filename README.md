@@ -72,7 +72,7 @@ The evaluation was carried out by both extrinsic (with a Named Entity Recognitio
 With NER, we defined that the best model was with 300 dimensions, and projected the words using Principal Component Analysis.
 
 Further details about evaluation and the steps performed can be found in [Biomedical Word Embeddings for Spanish Development and Evaluation.pdf](https://www.aclweb.org/anthology/W19-1916.pdf)
-###SKIPGRAM:
+### SKIPGRAM:
 
 |Model|Validation|Test|
 |--------|-----|------|
@@ -83,7 +83,7 @@ Further details about evaluation and the steps performed can be found in [Biomed
 |Wiki_cased|88.82|87.16|
 |Wiki_uncased|88.77|87.21|
 
-###CBOW:
+### CBOW:
 |Model|Validation|Test|
 |--------|-----|------|
 |Scielo_cased|88.11|87.75|
