@@ -94,6 +94,107 @@ Further details about evaluation and the steps performed can be found in [Biomed
 |Wiki_cased|86.55|85.46|
 |Wiki_uncased|85.12|85.74|
 
+
+|      |       |          | Cased      |       | Uncased    |       |
+|---------|----------|-------------|------------|-------|------------|-------|
+| Version | Method   | Corpora     | Validation | Test  | Validation | Test  |
+| 1.0    | skipgram | wiki        | 88.55      | 87.78 | -          | -     |
+|         |          | scielo      | 89.47      | 87.31 | -          | -     |
+|         |          | scielo+wiki | 89.42      | **88.17** | -          | -     |
+| 2.0    | cbow     | wiki        | 86.55      | 85.46 | 85.12      | 85.74 |
+|         |          | scielo      | 88.11      | 87.75 | 89.99      | 87.24 |
+|         |          | scielo+wiki | 87.95      | 87.78 | 86.56      | 88.10 |
+|         | skipgram | wiki        | 88.82      | 87.16 | 88.77      | 87.21 |
+|         |          | scielo      | 89.66      | 88.77 | 89.07      | 89.17 |
+|         |          | scielo+wiki | 88.76      | 88.64 | 89.71      | **89.74** |
+
+
+<table class="tg">
+  <tr>
+    <th class="tg-0pky" colspan="3"></th>
+    <th class="tg-7btt" colspan="2">Cased</th>
+    <th class="tg-7btt" colspan="2">Uncased</th>
+  </tr>
+  <tr>
+    <th class="tg-fymr">Version</th>
+    <th class="tg-fymr">Method</th>
+    <th class="tg-fymr">Corpora</th>
+    <th class="tg-fymr">Validation</th>
+    <th class="tg-fymr">Test</th>
+    <th class="tg-fymr">Validation</th>
+    <th class="tg-fymr">Test</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="3">v1.0</td>
+    <td class="tg-0pky" rowspan="3">skipgram</td>
+    <td class="tg-0pky">wiki</td>
+    <td class="tg-0pky">88.55</td>
+    <td class="tg-0pky">87.78</td>
+    <td class="tg-0pky">-</td>
+    <td class="tg-0pky">-</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo</td>
+    <td class="tg-0pky">89.47</td>
+    <td class="tg-0pky">87.31</td>
+    <td class="tg-0pky">-</td>
+    <td class="tg-0pky">-</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo+wiki</td>
+    <td class="tg-0pky">89.42</td>
+    <td class="tg-0pky">88.17</td>
+    <td class="tg-0pky">-</td>
+    <td class="tg-0pky">-</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="6">v2.0</td>
+    <td class="tg-0pky" rowspan="3">cbow</td>
+    <td class="tg-0pky">wiki</td>
+    <td class="tg-0pky">86.55</td>
+    <td class="tg-0pky">85.46</td>
+    <td class="tg-0pky">85.12</td>
+    <td class="tg-0pky">85.74</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo</td>
+    <td class="tg-0pky">88.11</td>
+    <td class="tg-0pky">87.75</td>
+    <td class="tg-0pky">89.99</td>
+    <td class="tg-0pky">87.24</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo+wiki</td>
+    <td class="tg-0pky">87.95</td>
+    <td class="tg-0pky">87.78</td>
+    <td class="tg-0pky">86.56</td>
+    <td class="tg-0pky">88.10</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="3">skipgram</td>
+    <td class="tg-0pky">wiki</td>
+    <td class="tg-0pky">88.82</td>
+    <td class="tg-0pky">87.16</td>
+    <td class="tg-0pky">88.77</td>
+    <td class="tg-0pky">87.21</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo</td>
+    <td class="tg-0pky">89.66</td>
+    <td class="tg-0pky">88.77</td>
+    <td class="tg-0pky">89.07</td>
+    <td class="tg-0pky">89.17</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">scielo+wiki</td>
+    <td class="tg-0pky">88.76</td>
+    <td class="tg-0pky">88.64</td>
+    <td class="tg-0pky">89.71</td>
+    <td class="tg-fymr">89.74</td>
+  </tr>
+</table>
+
+
 ## Troubleshooting
 
 If you get Uncide/Decode Error, Please read the embedding files as a below example, by adding a new argument to specify the encoding:
