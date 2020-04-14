@@ -25,11 +25,12 @@ The used Corpora in the second version are preprocessed, and therefore the pre-t
    - **Freeling** (Padro and Stanilovsky, 2012) is a C++ library providing language analysis functionalities  (Morphological Analysis, Named Entity Detection, PoS-Tagging, Parsing, Word Sense Disambiguation, Semantic Role Labelling, so forth) for a variety of languages.
 
 3) Final pre-processing by [Indra-Indexer](https://github.com/Lambda-3/Indraindexer) toolkit. 
-   - Separating punctuations from tokens.
+   - Removing punctuations.
    - Replacing numbers for the place holder `<NUMBER>`.
    - Setting a minimum acceptable token size to 1.
    - Setting a maximum acceptable token size to 100.
    - Applying lowercase the tokens (we generated both Cased and Uncased version).
+
 
 **After preprocessing**:
 
@@ -92,6 +93,14 @@ Further details about evaluation and the steps performed can be found in [Biomed
 |Scielo+Wiki_uncased|86.56|88.10|
 |Wiki_cased|86.55|85.46|
 |Wiki_uncased|85.12|85.74|
+
+## Troubleshooting
+
+If you get Uncide/Decode Error, Please read the embedding files as a below example, by adding a new argument to specify the encoding:
+
+<pre>
+f = open(fname, "r", encoding="utf-8")
+</pre> 
 
 
 ## Digital Object Identifier (DOI) and access to dataset files
