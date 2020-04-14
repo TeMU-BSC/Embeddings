@@ -190,7 +190,7 @@ Further details about evaluation and the steps performed can be found in [Biomed
     <td class="tg-0pky">88.76</td>
     <td class="tg-0pky">88.64</td>
     <td class="tg-0pky">89.71</td>
-    <td class="tg-fymr">89.74</td>
+    <td class="tg-fymr"><b>89.74</b></td>
   </tr>
 </table>
 
