@@ -79,7 +79,7 @@ We kept all standard options for training.
 - Size of word vectors: 300
 - Epochs: 20
 - Size of the context window: 5
-- Word-Representation Modes: ``CBOW`` and ``Skip-gram``
+- Word-Representation Modes: CBOW and Skip-gram
 </pre>
 
 We generated word embedding for both versions (cased and uncased corpora):
