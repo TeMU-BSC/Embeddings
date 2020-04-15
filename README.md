@@ -1,9 +1,33 @@
-# Embeddings V.2
+# # Biomedical Word Embeddings for Spanish: Development and Evaluation (v2.0)
 
 This repository contains the word embeddings generated from Spanish corpora.
 
 The first version is accessible from [this repository](https://github.com/PlanTL-SANIDAD/Embeddings). 
-The used Corpora in the second version are preprocessed, and therefore the pre-trained models have more quality. 
+
+In this version, we preprocessed the Corpora, obtaining better embeddings. 
+
+## Directory Structure
+
+The example below shows the structure for the Wikipedia subset. All other subsets have the same structure
+
+<pre>
+Wikipedia/
+    cbow/
+	cased/
+    		Wikipedia_cbow_cased.bin: fastText embedding in binary file.
+        	Wikipedia_cbow_cased.vec: fastText embedding in text file.
+	uncased/
+    		Wikipedia_cbow_uncased.bin: fastText embedding in binary file.
+        	Wikipedia_cbow_uncased.vec: fastText embedding in text file.
+    skipgram/
+	cased/
+    		Wikipedia_skipgram_cased.bin: fastText embedding in binary file.
+        	Wikipedia_skipgram_cased.vec: fastText embedding in text file.
+	uncased/
+    		Wikipedia_skipgram_uncased.bin: fastText embedding in binary file.
+        	Wikipedia_skipgram_uncased.vec: fastText embedding in text file.	
+</pre>
+
 
 ## Corpora used
 
@@ -41,12 +65,12 @@ The used Corpora in the second version are preprocessed, and therefore the pre-t
 |Scielo + Wikipedia Health|13,740,222|503,647|435,652|
 
 
-## Embeddings generated
+## Embeddings generation using fastText
 
-### fastText
+We used the fastText [fastText](https://fasttext.cc/) to train word embeddings.
 
-We used the fastText (https://fasttext.cc/) to train word embeddings.
 We kept all standard options for training.
+
 <pre>
 - Minimum number of word occurrences: 5
 - Phrase representation: No (i.e. length of word n-gram = 1)
@@ -55,60 +79,59 @@ We kept all standard options for training.
 - Size of word vectors: 300
 - Epochs: 20
 - Size of the context window: 5
-- Word-Representation Modes: CBOW and SKIPGRAM
+- Word-Representation Modes: CBOW and SKIP-GRAM
 </pre>
 
-We generated word embedding for both version (Cased and Uncased corpora):
+We generated word embedding for both version (cased and uncased corpora):
 <pre>
+- Wiki_cased
+- Wiki_uncased
 - Scielo_cased
 - Scielo_uncased
 - Scielo+Wiki_cased
 - Scielo+Wiki_uncased
-- Wiki_cased
-- Wiki_uncased
 </pre>
+
 ## Evaluation
 
-The evaluation was carried out by both extrinsic (with a Named Entity Recognition framework) and intrinsic, with the three already available datasets for such task UMNSRS-sim, UMNSRS-rel, and MayoSRS.
-With NER, we defined that the best model was with 300 dimensions, and projected the words using Principal Component Analysis.
+The evaluation of the original embeddings (version 1.0) was carried out by both extrinsically (with a Named Entity Recognition framework) and intrinsically, with the three already available datasets for such task UMNSRS-sim, UMNSRS-rel, and MayoSRS. In the NER scenario, we concluded that the best model was the one genenated using Skip-gram, with 300 dimensions, and trained with Scielo and Wikipedia. We projected the words using Principal Component Analysis.
 
 Further details about evaluation and the steps performed can be found in [Biomedical Word Embeddings for Spanish Development and Evaluation.pdf](https://www.aclweb.org/anthology/W19-1916.pdf)
-### SKIPGRAM:
 
-|Model|Validation|Test|
-|--------|-----|------|
-|Scielo_cased|89.66|88.77|
-|**Scielo_uncased**|89.07 |**89.17**|
-|Scielo+Wiki_cased|88.76|88.64|
-|Scielo+Wiki_uncased|89.71|89.74|
-|Wiki_cased|88.82|87.16|
-|Wiki_uncased|88.77|87.21|
+The PCA plots for our embeddings (version 1.0) and a general-domain embedding are available in this repository also:
 
-### CBOW:
-|Model|Validation|Test|
-|--------|-----|------|
-|Scielo_cased|88.11|87.75|
-|Scielo_uncased|89.99|87.24|
-|Scielo+Wiki_cased|87.95|87.78|
-|Scielo+Wiki_uncased|86.56|88.10|
-|Wiki_cased|86.55|85.46|
-|Wiki_uncased|85.12|85.74|
+* [Our embeddings](our_embeddings.pdf)
+* [SBWC embeddings](sbwc_embeddings.pdf)
+
+The translations for Spanish in TSV format of the UMNSRS and Mayo datasets one are also availabe in this Github repository:
+
+* [UMNSRS Similarity](UMNSRS_Similarity_Filtered.tsv)
+* [UMNSRS Relatedness](UMNSRS_Relatedness_Filtered.tsv)
+* [Mayo](Mayo_Filtered.tsv)
 
 
-|      |       |          | Cased      |       | Uncased    |       |
-|---------|----------|-------------|------------|-------|------------|-------|
+### Evaluation of the new version
+
+To evaluate the new version of the embeddings (version v2.0), we replicated the extrinsic evaluation from the original paper. The new embeddings outperform the previous ones by up to 1.68 points, while also solving some other minor issues.
+
+<!-- Results in plain text -->
+<!-- 
+|         |          |             |        Cased       |  Uncased   |       |
+|---------|----------|-------------|--------------------|--------------------|
 | Version | Method   | Corpora     | Validation | Test  | Validation | Test  |
-| 1.0    | skipgram | wiki        | 88.55      | 87.78 | -          | -     |
+| 1.0     | skipgram | wiki        | 88.55      | 87.78 | -          | -     |
 |         |          | scielo      | 89.47      | 87.31 | -          | -     |
-|         |          | scielo+wiki | 89.42      | **88.17** | -          | -     |
-| 2.0    | cbow     | wiki        | 86.55      | 85.46 | 85.12      | 85.74 |
+|         |          | scielo+wiki | 89.42      | 88.17 | -          | -     |
+| 2.0     | cbow     | wiki        | 86.55      | 85.46 | 85.12      | 85.74 |
 |         |          | scielo      | 88.11      | 87.75 | 89.99      | 87.24 |
 |         |          | scielo+wiki | 87.95      | 87.78 | 86.56      | 88.10 |
 |         | skipgram | wiki        | 88.82      | 87.16 | 88.77      | 87.21 |
 |         |          | scielo      | 89.66      | 88.77 | 89.07      | 89.17 |
-|         |          | scielo+wiki | 88.76      | 88.64 | 89.71      | **89.74** |
+|         |          | scielo+wiki | 88.76      | 88.64 | 89.71      | 89.74 |
+ -->
 
 
+<!-- Results in HTML -->
 <table class="tg">
   <tr>
     <th class="tg-0pky" colspan="3"></th>
@@ -197,16 +220,12 @@ Further details about evaluation and the steps performed can be found in [Biomed
 
 ## Troubleshooting
 
-If you get Uncide/Decode Error, Please read the embedding files as a below example, by adding a new argument to specify the encoding:
+If you get an ``Unicode/Decode error``, please load the embedding files adding a new argument to specify the encoding, as shown below:
 
 <pre>
-f = open(fname, "r", encoding="utf-8")
+f = open(filename, "r", encoding="utf-8")
 </pre> 
 
-
-## Digital Object Identifier (DOI) and access to dataset files
-
-Word Embedding models can be download from:  ??
 
 ## Citing 
 Please cite our paper if you use it in your experiments or project.
@@ -231,4 +250,4 @@ Siamak Barzegar (siamak.barzegar@bsc.es)
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
-Copyright (c) 2018 Secretaría de Estado para el Avance Digital (SEAD)
+Copyright (c) 2020 Secretaría de Estado de Digitalización e Inteligencia Artificial (SEDIA)
