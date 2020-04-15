@@ -97,7 +97,7 @@ We generated word embedding for both versions (cased and uncased corpora):
 
 The evaluation of the original embeddings (version 1.0) was carried out by both extrinsically (with a Named Entity Recognition framework) and intrinsically, with the three already available datasets for such task UMNSRS-sim, UMNSRS-rel, and MayoSRS. In the NER scenario, we concluded that the best model was the one genenated using ``Skip-gram``, with 300 dimensions, and trained with SciELO and Wikipedia. We projected the words using Principal Component Analysis.
 
-Further details about evaluation and the steps performed can be found in [Medical Word Embeddings for Spanish: Development and Evaluation](https://www.aclweb.org/anthology/W19-1916.pdf)
+Further details about evaluation and the steps performed can be found in our paper: [Medical Word Embeddings for Spanish: Development and Evaluation](https://www.aclweb.org/anthology/W19-1916.pdf).
 
 The PCA plots for our embeddings (version 1.0) and a general-domain embedding are available in this repository also:
 
