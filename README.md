@@ -101,14 +101,14 @@ Further details about evaluation and the steps performed can be found in [Biomed
 
 The PCA plots for our embeddings (version 1.0) and a general-domain embedding are available in this repository also:
 
-* [Our embeddings](our_embeddings.pdf)
-* [SBWC embeddings](sbwc_embeddings.pdf)
+* [Our embeddings](plots/our_embeddings.pdf)
+* [SBWC embeddings](plots/sbwc_embeddings.pdf)
 
 The translations for Spanish in TSV format of the UMNSRS and Mayo datasets one are also availabe in this Github repository:
 
-* [UMNSRS Similarity](UMNSRS_Similarity_Filtered.tsv)
-* [UMNSRS Relatedness](UMNSRS_Relatedness_Filtered.tsv)
-* [Mayo](Mayo_Filtered.tsv)
+* [UMNSRS Similarity](datasets/UMNSRS_Similarity_Filtered.tsv)
+* [UMNSRS Relatedness](datasets/UMNSRS_Relatedness_Filtered.tsv)
+* [Mayo](datasets/Mayo_Filtered.tsv)
 
 
 ### Evaluation of the new version
