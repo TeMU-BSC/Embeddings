@@ -11,7 +11,7 @@ https://doi.org/10.5281/zenodo.3626806
 The example below shows the structure for the Wikipedia subset. All other subsets have the same structure
 
 <pre>
-Wikipedia/
+wikipedia/
     cbow/
 	cased/
     		Wikipedia_cbow_cased.bin: fastText embedding in binary file.
