@@ -8,7 +8,7 @@ https://doi.org/10.5281/zenodo.3626806
 
 ## Directory Structure
 
-The example below shows the structure for the Wikipedia subset. All other subsets have the same structure
+The example below shows the structure for the Wikipedia subset. All other subsets have the same structure:
 
 <pre>
 wikipedia/
@@ -28,6 +28,7 @@ wikipedia/
         	Wikipedia_skipgram_uncased.vec: fastText embedding in text file.	
 </pre>
 
+For usability and disk space reasons, the files in the directories are compressed in a ``tar.gz`` file. Uncompress only those embeddings you want to use.
 
 ## Corpora used
 
