@@ -1,4 +1,4 @@
-## Biomedical Word Embeddings for Spanish: Development and Evaluation (v2.0)
+# Biomedical Word Embeddings for Spanish: Development and Evaluation (v2.0)
 
 This repository contains the word embeddings generated from Spanish corpora.
 
