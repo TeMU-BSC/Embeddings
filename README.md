@@ -1,10 +1,6 @@
 # Biomedical Word Embeddings for Spanish: Development and Evaluation (v2.0)
 
-This repository contains the word embeddings generated from Spanish corpora.
-
-The first version is accessible from [this repository](https://github.com/PlanTL-SANIDAD/Embeddings). 
-
-In this version, we preprocessed the Corpora, obtaining better embeddings. 
+This repository contains the word embeddings generated from Spanish corpora. In this version, we preprocessed the Corpora, obtaining better embeddings. 
 
 ## Digital Object Identifier (DOI) and access to files
 
