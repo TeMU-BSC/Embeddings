@@ -6,6 +6,10 @@ The first version is accessible from [this repository](https://github.com/PlanTL
 
 In this version, we preprocessed the Corpora, obtaining better embeddings. 
 
+## Digital Object Identifier (DOI) and access to files
+
+https://doi.org/10.5281/zenodo.3626806
+
 ## Directory Structure
 
 The example below shows the structure for the Wikipedia subset. All other subsets have the same structure
